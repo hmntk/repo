@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      /* footer started */
+      .right,
+      .header,
+      .content,
+      button,
+      .userLogin,
+      .citiesbox,
+      .cityy,
+      .city37,
+      .city38 {
+        display: flex;
+      }
+
+      .header {
+        box-shadow: 0 0 1vw rgba(17, 6, 66, 0.5);
+        background-color: transparent;
+      }
+      .userLogin {
+        width: 26%;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+      }
+      .userbtn {
+        background-color: transparent;
+        padding-right: 15px;
+      }
+      .home {
+        padding: 0 8px 1vw 1vw;
+        background-color: transparent;
+        color: rgb(243, 214, 83);
+      }
+      .content {
+        width: 100%;
+        justify-content: space-between;
+        box-sizing: border-box;
+        max-width: 1300px;
+
+        padding: 20px 5px;
+        margin: auto;
+      }
+
+      button {
+        background-color: white;
+        border: none;
+      }
+
+      h4,
+      .h5 {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        color: #333333;
+        line-height: 0;
+        flex-wrap: wrap;
+      }
+      h4 {
+        margin: 5px 0px 25px 0px;
+      }
+
+      svg {
+        stroke: #010936;
+        fill: #010936;
+
+        stroke-width: "2";
+      }
+
+      .citiesbox1,
+      .footerbox {
+        background-color: #010936;
+      }
+      p {
+        color: white;
+        font-family: "Nunito", sans-serif;
+      }
+      .citiesbox {
+        max-width: 70vw;
+        margin: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .citiesbox1 {
+        display: flex;
+        max-width: 1400px;
+        margin: auto;
+        flex-wrap: wrap;
+      }
+      .footerbox {
+        box-sizing: border-box;
+        padding: 30px;
+      }
+
+      .legal_contact {
+        display: flex;
+        max-width: 70vw;
+        margin: auto;
+        flex-direction: row;
+        justify-content: flex-start;
+        line-height: 0;
+        flex-wrap: wrap;
+      }
+
+      .cityy,
+      .city37,
+      .city38 {
+        line-height: 0;
+        margin: -3px 0px;
+        width: 33%;
+        justify-content: flex-start;
+        font-size: 16px;
+      }
+      .heading {
+        font-family: "Nunito", sans-serif;
+        color: rgb(212, 208, 208);
+        font-size: 21px;
+        font-weight: 500;
+        width: 100%;
+      }
+      @media screen and (max-width: 550px) {
+        div.right,
+        div.left {
+          width: 100%;
+        }
+        .yellowbutton {
+          width: 110px;
+        }
+        .yellowbuttontext {
+          font-size: 16px;
+        }
+        .outputright {
+          margin-right: 5px;
+        }
+        .inputright {
+          width: 95%;
+          justify-content: flex-end;
+        }
+      }
+
+      @media screen and (max-width: 1439px) {
+        .cityy {
+          width: 25%;
+        }
+      }
+      @media screen and (max-width: 764px) {
+        .cityy,
+        .city37,
+        .city38 {
+          width: 50%;
+        }
+      }
+      @media screen and (max-width: 1439px) {
+        .city37,
+        .city38 {
+          width: 50%;
+        }
+      }
+      @media screen and (max-width: 432px) {
+        .city37,
+        .city38 {
+          width: 100%;
+        }
+      }
+      @media screen and (max-width: 498px) {
+        /* .yellowbutton {
+          z-index: 2;
+          position: relative;
+        }
+        .outputright {
+          z-index: 1;
+          position: absolute;
+        } */
+        .yellowbutton {
+          width: 35%;
+        }
+        .yellowbuttontext {
+          font-size: 13px;
+          margin: 0;
+        }
+      }
+      .space {
+        height: 40px;
+        width: 100%;
+      }
+      .city37,
+      .city38 {
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      hr {
+        color: rgb(102, 133, 238);
+        max-width: 1400px;
+      }
+      button,
+      .href1 {
+        background-color: #010936;
+        color: white;
+        font-family: "Nunito", sans-serif;
+        font-size: 16px;
+        margin-left: -7px;
+      }
+      .href1 {
+        margin-left: 0px;
+        text-decoration: none;
+      }
+      .btn p {
+        cursor: pointer;
+        line-height: 0px;
+        margin: 11px 0;
+        font-size: 16px;
+        flex-wrap: wrap;
+      }
+
+      .mail {
+        stroke: white;
+        fill: #010936;
+        cursor: pointer;
+      }
+      /* Style all font awesome icons */
+      .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        text-decoration: none;
+      }
+      /* rounded icon */
+      .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 17px;
+        height: 17px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
+        box-shadow: 0 4px rgba(153, 153, 153, 0.116);
+      }
+
+      /* Add a hover effect if you want */
+      .fa:hover,
+      .href1:active {
+        opacity: 0.3;
+      }
+      .fa:active {
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+      .href1:active {
+        transform: translateY(4px);
+      }
+      .fa-instagram {
+        background: rgb(82, 86, 119);
+        color: #010936;
+      }
+
+      /* Set a specific color for each brand */
+
+      /* Facebook */
+      .fa-facebook {
+        background: rgb(82, 86, 119);
+        color: #010936;
+      }
+
+      /* Twitter */
+      .fa-twitter {
+        background: rgb(82, 86, 119);
+        color: #010936;
+      }
+      .right p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        margin-top: 10px;
+        margin-right: 10px;
+        color: rgb(133, 133, 133);
+      }
+      a {
+        margin-right: 5px;
+      }
+      .right {
+        margin-top: 10px;
+        width: 50%;
+        justify-content: flex-end;
+      }
+
+      .left {
+        width: 50%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        color: rgb(133, 133, 133);
+        margin-top: 15px;
+        margin-bottom: 10px;
+
+        justify-content: flex-start;
+      }
+      .h6,
+      .bottomline {
+        color: black;
+      }
+
+      .citiesbox1 {
+        background-color: #010936;
+      }
+      .inputleft {
+        margin: 0 20px;
+        font-size: 20px;
+        color: gray;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      .outputright {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 30px 0 0;
+        font-size: 16px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        color: gray;
+      }
+      .graytext {
+        color: gray;
+        font-size: 16px;
+      }
+      .yellowbuttontext {
+        color: black;
+        font-size: 18px;
+        align-items: center;
+      }
+      p.label {
+        color: black;
+      }
+      svg {
+        color: black;
+      }
+      .home {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="footerbox">
+      <div class="contentbox">
+        <div class="apnacontent">
+          <br />
+          <div class="citiesbox">
+            <p class="heading">Cities we deliver to</p>
+            <div class="cityy"><p>Pune</p></div>
+            <div class="cityy"><p>Mumbai</p></div>
+            <div class="cityy"><p>Bangalore</p></div>
+
+            <div class="cityy"><p>Noida</p></div>
+            <div class="cityy"><p>Gurgaon</p></div>
+            <div class="cityy"><p>New Delhi</p></div>
+            <div class="cityy"><p>Hyderabad</p></div>
+            <div class="cityy"><p>Chennai</p></div>
+            <div class="cityy"><p>Indore</p></div>
+            <div class="cityy"><p>Nagpur</p></div>
+            <div class="cityy"><p>Faridabad</p></div>
+            <div class="cityy"><p>Ahmedabad</p></div>
+            <div class="cityy"><p>Ghaziabad</p></div>
+            <div class="cityy"><p>Coimbatore</p></div>
+            <div class="cityy"><p>Dubai</p></div>
+            <div class="cityy"><p>Vadodra</p></div>
+            <div class="cityy"><p>Bhopal</p></div>
+            <div class="cityy"><p>Kolkata</p></div>
+            <div class="cityy"><p>Surat</p></div>
+            <div class="cityy"><p>Mysore</p></div>
+            <div class="cityy"><p>Pondicherry</p></div>
+            <div class="cityy"><p>Nashik</p></div>
+            <div class="cityy"><p>Jaipur</p></div>
+            <div class="cityy"><p>Panchukla</p></div>
+            <div class="cityy"><p>Mohali</p></div>
+            <div class="cityy"><p>Chandigarh</p></div>
+            <div class="cityy"><p>Vijaywada</p></div>
+            <div class="cityy"><p>Vellore</p></div>
+            <div class="cityy"><p>Zirakpur</p></div>
+            <div class="cityy"><p>Lucknow</p></div>
+            <div class="cityy"><p>Kochi</p></div>
+            <div class="cityy"><p>Vizag</p></div>
+            <div class="cityy"><p>Tirupati</p></div>
+            <div class="cityy"><p>Trippur</p></div>
+            <div class="cityy"><p>Kota</p></div>
+            <div class="cityy"><p>Many more...</p></div>
+            <div class="space"></div>
+          </div>
+          <div class="legal_contact">
+            <div class="city37">
+              <p class="heading">Legal</p>
+              <button class="btn">
+                <p>
+                  <a class="href1" href="https://www.faasos.com/terms"
+                    >Terms & Conditions</a
+                  >
+                </p></button
+              ><button class="btn">
+                <p>
+                  <a class="href1" href="https://www.faasos.com/privacy"
+                    >Privacy Policy</a
+                  >
+                </p>
+              </button>
+            </div>
+            <div class="city38">
+              <p class="heading">Contact</p>
+              <button class="btn">
+                <p>
+                  <a class="href1" href="mailto:feasts@faasos.com"
+                    ><svg
+                      class="mail"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                      ></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    crm@faasos.com
+                  </a>
+                </p>
+              </button>
+            </div>
+            <div class="space"></div>
+          </div>
+          <hr />
+          <div class="citiesbox1">
+            <div class="left">2020 @ Faasos. All rights reserved</div>
+            <div class="right">
+              <p>Follow us on</p>
+              <a
+                href="https://www.facebook.com/Faasos"
+                class="fa fa-facebook"
+              ></a>
+              <a href="https://twitter.com/faasos" class="fa fa-twitter"></a
+              ><a
+                href="https://www.instagram.com/faasos/"
+                class="fa fa-instagram"
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

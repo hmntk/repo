@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <title>Project work</title>
+    <style type="text/css">
+      body {
+        margin: 0px;
+      }
+      * {
+        text-decoration: none;
+      }
+
+      .header,
+      .content,
+      button,
+      .userLogin {
+        display: flex;
+      }
+
+      .header {
+        box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5);
+        background-color: white;
+        position: relative;
+        z-index: 2;
+      }
+      .userLogin {
+        width: 26%;
+        justify-content: flex-end;
+      }
+      .userbtn {
+        padding-right: 15px;
+      }
+      .home {
+        padding: 0 8px 1vw 1vw;
+      }
+      .content {
+        width: 100%;
+        justify-content: space-between;
+        box-sizing: border-box;
+
+        padding: 1.5vw 1vw;
+        margin: 0 12vw;
+      }
+
+      button {
+        background-color: white;
+        border: none;
+      }
+      .logo {
+        width: 80px;
+        height: 40px;
+      }
+
+      .login {
+        margin-top: 5px;
+        color: rgb(44, 56, 110);
+        font-family: "Roboto", sans-serif;
+        font-weight: bolder;
+      }
+
+      svg {
+        fill: rgb(44, 56, 110);
+        stroke: rgb(44, 56, 110);
+        stroke-width: "2";
+      }
+      @media screen and (max-width: 768px) {
+        .content {
+          margin: 0vw 0vw;
+        }
+      }
+      /* navbar css finished above */
+      /* hamburger css things adding below */
+      @import url("https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans:600&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+      }
+      .sidebar {
+        margin-top: 65px;
+        position: fixed;
+        width: 240px;
+        right: -240px;
+        height: 100%;
+
+        background: #010936;
+        transition: all 0.5s ease;
+        border-radius: 0 0 0 20px;
+      }
+      .sidebar header {
+        font-size: 28px;
+        color: white;
+        line-height: 70px;
+        text-align: center;
+        background: #01051f;
+        user-select: none;
+        font-family: "Montserrat", sans-serif;
+      }
+      .sidebar a {
+        display: block;
+        height: 65px;
+        width: 100%;
+        color: white;
+        line-height: 65px;
+        padding-left: 30px;
+        box-sizing: border-box;
+        border-bottom: 1px solid black;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-left: 5px solid transparent;
+        font-family: "Open Sans", sans-serif;
+        transition: all 0.5s ease;
+      }
+      a.active,
+      a:hover {
+        border-left: 5px solid rgb(243, 214, 83);
+        color: rgb(243, 214, 83);
+      }
+      .sidebar a i {
+        font-size: 23px;
+        margin-right: 16px;
+      }
+      .sidebar a span {
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      #check {
+        display: none;
+      }
+      label #btn,
+      label #cancel {
+        position: absolute;
+        cursor: pointer;
+        color: rgb(231, 226, 226);
+        border-radius: 5px;
+
+        /* border: 1px solid #262626; */
+        /* top: 20px;
+        right: 150px; */
+
+        font-size: 29px;
+        background: white;
+        height: 25px;
+        width: 25px;
+        text-align: center;
+        line-height: 45px;
+        transition: all 0.5s ease;
+      }
+      label #cancel {
+        opacity: 0;
+        visibility: hidden;
+      }
+      #check:checked ~ .sidebar {
+        right: 0;
+      }
+
+      #check:checked ~ label #btn {
+        margin-right: 240px;
+        opacity: 0;
+        visibility: hidden;
+      }
+      #check:checked ~ label #cancel {
+        margin-right: 240px;
+        opacity: 1;
+        visibility: visible;
+      }
+      /* navbar added */
+      body {
+        margin: 0px;
+      }
+
+      .header,
+      .content,
+      button,
+      .userLogin {
+        display: flex;
+      }
+
+      .header {
+        box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5);
+        background-color: white;
+        position: relative;
+        z-index: 2;
+      }
+      .userLogin {
+        width: 26%;
+        justify-content: flex-end;
+      }
+      .userbtn {
+        padding-right: 15px;
+      }
+      .home {
+        padding: 0 8px 1vw 1vw;
+      }
+      .content {
+        width: 100%;
+        justify-content: space-between;
+        box-sizing: border-box;
+
+        padding: 1.5vw 1vw;
+        margin: 0 12vw;
+      }
+
+      button {
+        background-color: white;
+        border: none;
+      }
+      .logo {
+        width: 80px;
+        height: 40px;
+      }
+
+      .login {
+        margin-top: 5px;
+        color: rgb(44, 56, 110);
+        font-family: "Roboto", sans-serif;
+        font-weight: bolder;
+      }
+
+      svg {
+        fill: rgb(44, 56, 110);
+        stroke: rgb(44, 56, 110);
+        stroke-width: "2";
+      }
+
+      @media screen and (max-width: 768px) {
+        .content {
+          padding: 2vw 0;
+        }
+      }
+      .fa-times {
+        font-size: 30px;
+        color: rgb(44, 56, 110);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="content">
+        <div class="faasosLogo">
+          <img
+            class="logo"
+            src="https://assets.faasos.io/faasos_v2/faasosLogoPurple.svg"
+            alt="Logo"
+          />
+        </div>
+
+        <div class="userLogin">
+          <button class="userbtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="24">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <p class="login">Login</p>
+          </button>
+
+          <input type="checkbox" id="check" />
+          <label for="check">
+            <svg
+              id="btn"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <i class="fas fa-times"></i>
+          </label>
+          <div class="sidebar">
+            <header>My Menu</header>
+
+            <a href="https://www.treatsure.in/">
+              <i class="fas fa-hamburger"></i>
+              <span>Prty Orders</span>
+            </a>
+            <a href="#">
+              <i class="fas fa-users"></i>
+              <span>About Us</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
