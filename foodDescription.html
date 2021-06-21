@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0px;
+      }
+      .header,
+      .content,
+      button,
+      .userLogin,
+      .home_collection,
+      .description,
+      .detailsbox,
+      .first,
+      .second {
+        display: flex;
+      }
+
+      .header {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        background-color: white;
+        position: relative;
+        z-index: 2;
+      }
+      .content {
+        width: 100%;
+        justify-content: space-between;
+        box-sizing: border-box;
+        max-width: 1170px;
+        padding: 17px 5px; /* padding: 1.5vw 1vw;  */
+        margin: 0 auto;
+      }
+      .userLogin {
+        width: 26%;
+        justify-content: flex-end;
+      }
+      .logo {
+        width: 80px;
+        height: 40px;
+      }
+
+      .userbtn {
+        padding-right: 15px;
+        background-color: white;
+      }
+      .login {
+        margin-top: 5px;
+        color: rgb(44, 56, 110);
+        font-family: "Roboto", sans-serif;
+        font-weight: bolder;
+        background-color: white;
+      }
+      .home {
+        padding: 0 8px 1vw 1vw;
+      }
+      svg {
+        fill: rgb(44, 56, 110);
+        stroke: rgb(44, 56, 110);
+        stroke-width: "2";
+      }
+      button {
+        background-color: white;
+        border: none;
+      }
+      #maindiv {
+        box-sizing: border-box;
+        padding-top: 15px;
+        max-width: 1150px;
+        margin: auto;
+      }
+      .home_collection {
+        margin: 0 0 35px 5px;
+
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+
+      .grayfont,
+      .h5,
+      .h2 {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      .h2 {
+        margin: 0;
+      }
+      .grayfont {
+        color: gray;
+        font-size: 16px;
+        margin: 0 5px;
+        text-decoration: none;
+      }
+      .h5 {
+        margin: 2px 5px;
+      }
+      .description {
+        flex-direction: row;
+      }
+      .dishphoto,
+      .dishdescription {
+        width: 50%;
+        padding: 0 10px;
+      }
+      .photo {
+        width: 100%;
+      }
+      .detailsbox {
+        border: 1px solid gray;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+      }
+      .detailsbox2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        width: 15%;
+      }
+      .detailsbox1 {
+        width: 85%;
+        justify-content: flex-start;
+      }
+      .first,
+      .second {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .first {
+        padding: 25px 16px 25px 16px;
+      }
+      .second {
+        padding: 12px 16px;
+        background-color: rgb(231, 230, 230);
+      }
+      .rating-button-box {
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+        height: 59px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        box-sizing: border-box;
+        margin-top: 4%;
+      }
+      .rating-button-box .rating-box {
+        display: flex;
+        align-items: center;
+        max-height: 1.5rem;
+        border-radius: 0.2rem;
+        width: min-content;
+        margin-top: 0.1rem;
+        background-color: rgb(76, 175, 80);
+      }
+      .ratings {
+        display: flex;
+        margin-right: 0.4rem;
+        font-family: "Trebuchet MS";
+        font-weight: 600;
+        color: white;
+      }
+      .rating-left-box {
+        display: flex;
+        flex-direction: column;
+      }
+      .bottom-left-content {
+        margin: 0.4rem 0px 0px;
+        color: rgb(153, 153, 153);
+        font-size: 0.7rem;
+        text-align: center;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+      .rating-box {
+        display: flex;
+        align-items: center;
+        max-height: 1.5rem;
+        border-radius: 0.2rem;
+        width: min-content;
+        padding: 0.1rem 0.1rem 0rem 0.4rem;
+        margin-top: 0.1rem;
+        background-color: rgb(76, 175, 80);
+      }
+
+      .ratings {
+        display: flex;
+        margin-right: 0.4rem;
+        font-family: "Trebuchet MS";
+        font-weight: 600;
+        color: white;
+      }
+      .button-right-box {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        max-height: 49px;
+        justify-content: flex-end;
+        margin-left: auto;
+      }
+      .cart-button {
+        display: inline-flex;
+        padding: 0.9rem 1.8rem;
+        border: 1px solid transparent;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 8px 0px;
+        width: 100px;
+        margin-left: auto;
+        background-color: rgb(255, 211, 68);
+        color: rgb(51, 51, 51);
+        position: relative;
+        height: 31px;
+        border-radius: 0.4rem;
+        align-items: center;
+        font-size: 0.9rem;
+        font-weight: 600;
+        justify-content: center;
+      }
+      .bottom-right-content {
+        margin: 0.4rem 1rem 0px 0px;
+        color: rgb(153, 153, 153);
+        font-size: 0.7rem;
+        padding-left: 20%;
+        text-align: right;
+        font-weight: 500;
+      }
+      hr {
+        margin: 25px 5px 28px 0;
+      }
+      .foodmsg {
+        color: gray;
+        line-height: 20px;
+        text-align: justify;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      .tagheading {
+        font-size: 20px;
+        margin: 30px 0;
+        font-family: "Trebuchet MS";
+      }
+      p.label {
+        margin: 0;
+      }
+      .spantext {
+        border: none;
+        background-color: rgb(223, 182, 189);
+        border-radius: 10px;
+        padding: 5px;
+        color: rgb(129, 117, 3);
+        margin: 0 20px 0 0px;
+      }
+      .tagcategory {
+        padding-bottom: 90px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .content {
+          margin: 0vw 0vw;
+        }
+        .userbtn {
+          display: none;
+        }
+        .detailsbox2 {
+          margin-right: 10px;
+        }
+        .nonveg {
+          margin-left: 10px;
+        }
+        .description {
+          flex-direction: column;
+        }
+        .dishdescription,
+        .dishphoto {
+          width: 100%;
+          padding: 0%;
+        }
+        #maindiv {
+          padding: 0%;
+        }
+        .detailsbox {
+          border: none;
+        }
+        .second {
+          display: none;
+        }
+        .second-sticky {
+          width: 100%;
+          box-sizing: border-box;
+          background-color: white;
+          border-top: 1px solid black;
+          padding: 10px 10px;
+          display: flex;
+          flex-direction: row;
+          position: fixed;
+          bottom: 0;
+        }
+        .first {
+          padding: 0;
+        }
+        .dishdescription {
+          box-sizing: border-box;
+          padding: 16px 16px 0 16px;
+        }
+        .detailsbox2 {
+          justify-content: space-around;
+        }
+        .footerbox {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 959px) {
+        .home_collection {
+          display: none;
+        }
+      }
+      @media screen and (min-width: 769px) {
+        .second-sticky {
+          display: none;
+        }
+      }
+      /* footer started */
+      .right,
+      .header,
+      .content,
+      button,
+      .userLogin,
+      .citiesbox,
+      .city1,
+      .city2,
+      .city3,
+      .city4,
+      .city5,
+      .city6,
+      .city7,
+      .city8,
+      .city9,
+      .city10,
+      .city11,
+      .city12,
+      .city13,
+      .city14,
+      .city15,
+      .city16,
+      .city17,
+      .city18,
+      .city19,
+      .city20,
+      .city21,
+      .city22,
+      .city23,
+      .city24,
+      .city25,
+      .city26,
+      .city27,
+      .city28,
+      .city29,
+      .city30,
+      .city31,
+      .city32,
+      .city33,
+      .city34,
+      .city35,
+      .city36,
+      .city37,
+      .city38 {
+        display: flex;
+      }
+
+      .header {
+        box-shadow: 0 0 1vw rgba(17, 6, 66, 0.5);
+        background-color: transparent;
+      }
+      .userLogin {
+        width: 26%;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+      }
+      .userbtn {
+        background-color: transparent;
+        padding-right: 15px;
+      }
+      .home {
+        padding: 0 8px 1vw 1vw;
+        background-color: transparent;
+        color: rgb(243, 214, 83);
+      }
+      .content {
+        width: 100%;
+        justify-content: space-between;
+        box-sizing: border-box;
+        max-width: 1300px;
+
+        padding: 20px 5px;
+        margin: auto;
+      }
+
+      button {
+        background-color: white;
+        border: none;
+      }
+
+      h4,
+      .h5 {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        color: #333333;
+        line-height: 0;
+        flex-wrap: wrap;
+      }
+      h4 {
+        margin: 5px 0px 25px 0px;
+      }
+
+      svg {
+        stroke: #010936;
+        fill: #010936;
+
+        stroke-width: "2";
+      }
+
+      .citiesbox1,
+      .footerbox {
+        background-color: #010936;
+      }
+      p {
+        color: white;
+        font-family: "Nunito", sans-serif;
+      }
+      .citiesbox {
+        max-width: 70vw;
+        margin: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .citiesbox1 {
+        display: flex;
+        max-width: 1400px;
+        margin: auto;
+        flex-wrap: wrap;
+      }
+      .footerbox {
+        box-sizing: border-box;
+        padding: 30px;
+      }
+
+      .legal_contact {
+        display: flex;
+        max-width: 70vw;
+        margin: auto;
+        flex-direction: row;
+        justify-content: flex-start;
+        line-height: 0;
+        flex-wrap: wrap;
+      }
+
+      .city1,
+      .city2,
+      .city3,
+      .city4,
+      .city5,
+      .city6,
+      .city7,
+      .city8,
+      .city9,
+      .city10,
+      .city11,
+      .city12,
+      .city13,
+      .city14,
+      .city15,
+      .city16,
+      .city17,
+      .city18,
+      .city19,
+      .city20,
+      .city21,
+      .city22,
+      .city23,
+      .city24,
+      .city25,
+      .city26,
+      .city27,
+      .city28,
+      .city29,
+      .city30,
+      .city31,
+      .city32,
+      .city33,
+      .city34,
+      .city35,
+      .city36,
+      .city37,
+      .city38 {
+        line-height: 0;
+        margin: -3px 0px;
+        width: 33%;
+        justify-content: flex-start;
+        font-size: 16px;
+      }
+      .heading {
+        font-family: "Nunito", sans-serif;
+        color: rgb(212, 208, 208);
+        font-size: 21px;
+        font-weight: 500;
+        width: 100%;
+      }
+      @media screen and (max-width: 550px) {
+        div.right,
+        div.left {
+          width: 100%;
+        }
+        .yellowbutton {
+          width: 110px;
+        }
+        .yellowbuttontext {
+          font-size: 16px;
+        }
+        .outputright {
+          margin-right: 5px;
+        }
+        .inputright {
+          width: 95%;
+          justify-content: flex-end;
+        }
+      }
+
+      @media screen and (max-width: 1439px) {
+        .city1,
+        .city2,
+        .city3,
+        .city4,
+        .city5,
+        .city6,
+        .city7,
+        .city8,
+        .city9,
+        .city10,
+        .city11,
+        .city12,
+        .city13,
+        .city14,
+        .city15,
+        .city16,
+        .city17,
+        .city18,
+        .city19,
+        .city20,
+        .city21,
+        .city22,
+        .city23,
+        .city24,
+        .city25,
+        .city26,
+        .city27,
+        .city28,
+        .city29,
+        .city30,
+        .city31,
+        .city32,
+        .city33,
+        .city34,
+        .city35,
+        .city36 {
+          width: 25%;
+        }
+      }
+      @media screen and (max-width: 764px) {
+        .city1,
+        .city2,
+        .city3,
+        .city4,
+        .city5,
+        .city6,
+        .city7,
+        .city8,
+        .city9,
+        .city10,
+        .city11,
+        .city12,
+        .city13,
+        .city14,
+        .city15,
+        .city16,
+        .city17,
+        .city18,
+        .city19,
+        .city20,
+        .city21,
+        .city22,
+        .city23,
+        .city24,
+        .city25,
+        .city26,
+        .city27,
+        .city28,
+        .city29,
+        .city30,
+        .city31,
+        .city32,
+        .city33,
+        .city34,
+        .city35,
+        .city36,
+        .city37,
+        .city38 {
+          width: 50%;
+        }
+      }
+      @media screen and (max-width: 1439px) {
+        .city37,
+        .city38 {
+          width: 50%;
+        }
+      }
+      @media screen and (max-width: 432px) {
+        .city37,
+        .city38 {
+          width: 100%;
+        }
+      }
+      @media screen and (max-width: 498px) {
+        /* .yellowbutton {
+          z-index: 2;
+          position: relative;
+        }
+        .outputright {
+          z-index: 1;
+          position: absolute;
+        } */
+        .yellowbutton {
+          width: 35%;
+        }
+        .yellowbuttontext {
+          font-size: 13px;
+          margin: 0;
+        }
+      }
+      .space {
+        height: 40px;
+        width: 100%;
+      }
+      .city37,
+      .city38 {
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      hr {
+        color: rgb(102, 133, 238);
+        max-width: 1400px;
+      }
+      button,
+      .href1 {
+        background-color: #010936;
+        color: white;
+        font-family: "Nunito", sans-serif;
+        font-size: 16px;
+        margin-left: -7px;
+      }
+      .href1 {
+        margin-left: 0px;
+        text-decoration: none;
+      }
+      .btn p {
+        cursor: pointer;
+        line-height: 0px;
+        margin: 11px 0;
+        font-size: 16px;
+        flex-wrap: wrap;
+      }
+
+      .mail {
+        stroke: white;
+        fill: #010936;
+        cursor: pointer;
+      }
+      /* Style all font awesome icons */
+      .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        text-decoration: none;
+      }
+      /* rounded icon */
+      .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 17px;
+        height: 17px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
+        box-shadow: 0 4px rgba(153, 153, 153, 0.116);
+      }
+
+      /* Add a hover effect if you want */
+      .fa:hover,
+      .href1:active {
+        opacity: 0.3;
+      }
+      .fa:active {
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+      .href1:active {
+        transform: translateY(4px);
+      }
+      .fa-instagram {
+        background: rgb(82, 86, 119);
+        color: #010936;
+      }
+
+      /* Set a specific color for each brand */
+
+      /* Facebook */
+      .fa-facebook {
+        background: rgb(82, 86, 119);
+        color: #010936;
+      }
+
+      /* Twitter */
+      .fa-twitter {
+        background: rgb(82, 86, 119);
+        color: #010936;
+      }
+      .right p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        margin-top: 10px;
+        margin-right: 10px;
+        color: rgb(133, 133, 133);
+      }
+      a {
+        margin-right: 5px;
+      }
+      .right {
+        margin-top: 10px;
+        width: 50%;
+        justify-content: flex-end;
+      }
+
+      .left {
+        width: 50%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        color: rgb(133, 133, 133);
+        margin-top: 15px;
+        margin-bottom: 10px;
+
+        justify-content: flex-start;
+      }
+      .h6,
+      .bottomline {
+        color: black;
+      }
+
+      .citiesbox1 {
+        background-color: #010936;
+      }
+      .inputleft {
+        margin: 0 20px;
+        font-size: 20px;
+        color: gray;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      .outputright {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 30px 0 0;
+        font-size: 16px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        color: gray;
+      }
+      .graytext {
+        color: gray;
+        font-size: 16px;
+      }
+      .yellowbuttontext {
+        color: black;
+        font-size: 18px;
+        align-items: center;
+      }
+      p.label {
+        color: black;
+      }
+      svg {
+        color: black;
+      }
+      .home {
+        color: black;
+      }
+
+      /* footerbox done */
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div class="content">
+          <div class="faasosLogo">
+            <img
+              class="logo"
+              src="https://assets.faasos.io/faasos_v2/faasosLogoPurple.svg"
+              alt="Logo"
+            />
+          </div>
+
+          <div class="userLogin">
+            <button class="userbtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="27" height="24">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <p class="login">Login</p>
+            </button>
+            <button class="home">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="maindiv">
+      <div class="home_collection">
+        <div><a class="grayfont" href="">Home /</a></div>
+        <div><a class="grayfont" href="">collections /</a></div>
+        <div><h5 class="h5">Rice Chicken Rice Bowl</h5></div>
+      </div>
+      <div class="description">
+        <div class="dishphoto">
+          <img
+            class="photo"
+            src="https://product-assets.faasos.io/production/product/image_1622813825677_image_es_1618555582864_4%20Classic%20NonVeg%20Wraps%20%40389.jpg"
+            alt="image"
+          />
+        </div>
+        <div class="dishdescription">
+          <div class="detailsbox">
+            <div class="first">
+              <div class="detailsbox1">
+                <h2 class="h2">Royal Chicken Rice Bowl</h2>
+              </div>
+              <div class="detailsbox2">
+                <div>
+                  <svg width="14px" height="14px" viewBox="0 0 11 11">
+                    <g
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="Page-1"
+                      stroke="none"
+                      stroke-width="1"
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <g
+                        id="Faasos-Cart"
+                        transform="translate(-16.000000, -328.000000)"
+                        fill="#8B0314"
+                      >
+                        <g
+                          id="Group-11"
+                          transform="translate(16.000000, 292.000000)"
+                        >
+                          <g id="Group-2">
+                            <g id="Group-3">
+                              <g
+                                id="Group-13"
+                                transform="translate(0.000000, 36.000000)"
+                              >
+                                <g id="Group-2-Copy-4">
+                                  <path
+                                    d="M9,0 C10.1045695,0 11,0.8954305 11,2 L11,9 C11,10.1045695 10.1045695,11 9,11 L2,11 C0.8954305,11 0,10.1045695 0,9 L0,2 C0,0.8954305 0.8954305,0 2,0 L9,0 Z M9,0.899999976 L2,0.899999976 C1.43298764,0.899999976 0.96617611,1.32901069 0.906454627,1.88014288 L0.899999976,2 L0.899999976,9 C0.899999976,9.56701236 1.32901069,10.0338239 1.88014288,10.0935454 L2,10.1 L9,10.1 C9.56701236,10.1 10.0338239,9.67098931 10.0935454,9.11985712 L10.1,9 L10.1,2 C10.1,1.43298764 9.67098931,0.96617611 9.11985712,0.906454627 L9,0.899999976 Z"
+                                    id="Rectangle-Copy-5"
+                                    fill-rule="nonzero"
+                                  ></path>
+                                  <rect
+                                    id="Rectangle-Copy-6"
+                                    x="2"
+                                    y="2"
+                                    width="7"
+                                    height="7"
+                                    rx="3.5"
+                                  ></rect>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <p class="label"><label class="nonveg">₹&nbsp;</label>331</p>
+              </div>
+            </div>
+            <div class="second">
+              <div class="rating-left-box">
+                <div class="rating-box">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Empty_Star.svg/768px-Empty_Star.svg.png"
+                    alt="rating image"
+                    width="15px"
+                    height="15px"
+                  />
+                  <p class="ratings">5</p>
+                </div>
+                <div class="bottom-left-content">845 trust us</div>
+              </div>
+              <svg width="50px" height="50px" viewBox="0 0 56 28">
+                <g
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Spicy-Count---1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g
+                    id="Group-2"
+                    transform="translate(4.000000, 4.000000)"
+                    fill-rule="nonzero"
+                  >
+                    <g id="chili" transform="translate(0.000000, -0.000000)">
+                      <path
+                        d="M13.5420896,6.03304904 C12.9536461,6.42051173 12.3554797,7.07172708 11.8555224,8.14460554 C11.7799147,8.30682303 11.7215778,8.47628998 11.6680597,8.64707889 C11.2807249,9.88298507 8.98682303,15.7989765 0.429722814,16.3749254 C0.22771855,16.3885288 0.0563752665,16.5304904 0.0115138593,16.7279318 L0.0115138593,16.7279318 C-0.0439658849,16.9720682 0.107334755,17.2162473 0.351385928,17.2720256 C2.26835821,17.710064 9.63270789,18.8221322 13.6911727,14.6463539 C15.0421322,13.2563326 19.1314712,9.79407249 17.7547974,7.13675906 C16.9568443,5.59675906 14.990661,5.07923241 13.5420896,6.03304904 Z"
+                        id="Path"
+                        fill="#D15241"
+                      ></path>
+                      <path
+                        d="M17.6722388,6.29671642 C17.6185501,6.29671642 17.5649893,6.27552239 17.5251599,6.23351812 C17.4480171,6.15232409 17.4513859,6.02396588 17.53258,5.94673774 C19.0948827,4.46324094 19.7616631,3.18712154 19.5142857,2.15347548 C19.2142004,0.899744136 17.6302345,0.414285714 17.6142857,0.409552239 C17.506951,0.377654584 17.4458422,0.264776119 17.4778252,0.157398721 C17.5097228,0.0498507463 17.623113,-0.0109594883 17.7301493,0.0209381663 C17.8045203,0.0429424307 19.5547974,0.580469083 19.908742,2.05897655 C20.1923667,3.24358209 19.4867804,4.65061834 17.811855,6.2410661 C17.7726652,6.27829424 17.7224733,6.29671642 17.6722388,6.29671642 Z"
+                        id="Path"
+                        fill="#31978C"
+                      ></path>
+                      <path
+                        d="M17.0478891,5.57769723 L15.3410661,5.56357696 C15.2084861,5.56247335 15.1654584,5.74127932 15.2840085,5.80063966 L16.2706183,5.98767591 L16.4898934,6.87360341 L17.5336887,7.12797441 L17.8426866,8.27991471 C17.9032409,8.37944563 18.054968,8.34950959 18.073177,8.23445629 L18.2662687,7.01646055 C18.3384222,6.56123667 18.1530064,6.10341151 17.7843923,5.82673774 L17.7843923,5.82673774 C17.571855,5.66716418 17.3137313,5.57987207 17.0478891,5.57769723 Z"
+                        id="Path"
+                        fill="#44C4A1"
+                      ></path>
+                      <path
+                        d="M5.04507463,16.94742 C4.91283582,16.94742 4.79816631,16.8491258 4.78127932,16.7144563 C4.76294243,16.5685714 4.8663113,16.4354371 5.01219616,16.4169723 C9.45978678,15.856887 10.3642644,14.5167164 10.3728358,14.5034542 C10.4509595,14.3809808 10.6141578,14.3419616 10.7380384,14.4184222 C10.861791,14.4946269 10.9026439,14.6542431 10.8284009,14.7790618 C10.7905757,14.8427719 9.84733475,16.3449467 5.07876333,16.9453305 C5.06742004,16.9466525 5.05624733,16.94742 5.04507463,16.94742 Z"
+                        id="Path"
+                        fill="#E56353"
+                      ></path>
+                    </g>
+                    <g id="chili" transform="translate(14.000000, 0.000000)">
+                      <path
+                        d="M13.5420896,6.03304904 C12.9536461,6.42051173 12.3554797,7.07172708 11.8555224,8.14460554 C11.7799147,8.30682303 11.7215778,8.47628998 11.6680597,8.64707889 C11.2807249,9.88298507 8.98682303,15.7989765 0.429722814,16.3749254 C0.22771855,16.3885288 0.0563752665,16.5304904 0.0115138593,16.7279318 L0.0115138593,16.7279318 C-0.0439658849,16.9720682 0.107334755,17.2162473 0.351385928,17.2720256 C2.26835821,17.710064 9.63270789,18.8221322 13.6911727,14.6463539 C15.0421322,13.2563326 19.1314712,9.79407249 17.7547974,7.13675906 C16.9568443,5.59675906 14.990661,5.07923241 13.5420896,6.03304904 Z"
+                        id="Path"
+                        fill="#D2D2D2"
+                      ></path>
+                      <path
+                        d="M17.6722388,6.29671642 C17.6185501,6.29671642 17.5649893,6.27552239 17.5251599,6.23351812 C17.4480171,6.15232409 17.4513859,6.02396588 17.53258,5.94673774 C19.0948827,4.46324094 19.7616631,3.18712154 19.5142857,2.15347548 C19.2142004,0.899744136 17.6302345,0.414285714 17.6142857,0.409552239 C17.506951,0.377654584 17.4458422,0.264776119 17.4778252,0.157398721 C17.5097228,0.0498507463 17.623113,-0.0109594883 17.7301493,0.0209381663 C17.8045203,0.0429424307 19.5547974,0.580469083 19.908742,2.05897655 C20.1923667,3.24358209 19.4867804,4.65061834 17.811855,6.2410661 C17.7726652,6.27829424 17.7224733,6.29671642 17.6722388,6.29671642 Z"
+                        id="Path"
+                        fill="#929191"
+                      ></path>
+                      <path
+                        d="M17.0478891,5.57769723 L15.3410661,5.56357696 C15.2084861,5.56247335 15.1654584,5.74127932 15.2840085,5.80063966 L16.2706183,5.98767591 L16.4898934,6.87360341 L17.5336887,7.12797441 L17.8426866,8.27991471 C17.9032409,8.37944563 18.054968,8.34950959 18.073177,8.23445629 L18.2662687,7.01646055 C18.3384222,6.56123667 18.1530064,6.10341151 17.7843923,5.82673774 L17.7843923,5.82673774 C17.571855,5.66716418 17.3137313,5.57987207 17.0478891,5.57769723 Z"
+                        id="Path"
+                        fill="#A6A6A6"
+                      ></path>
+                    </g>
+                    <g id="chili" transform="translate(28.000000, 0.000000)">
+                      <path
+                        d="M13.5420896,6.03304904 C12.9536461,6.42051173 12.3554797,7.07172708 11.8555224,8.14460554 C11.7799147,8.30682303 11.7215778,8.47628998 11.6680597,8.64707889 C11.2807249,9.88298507 8.98682303,15.7989765 0.429722814,16.3749254 C0.22771855,16.3885288 0.0563752665,16.5304904 0.0115138593,16.7279318 L0.0115138593,16.7279318 C-0.0439658849,16.9720682 0.107334755,17.2162473 0.351385928,17.2720256 C2.26835821,17.710064 9.63270789,18.8221322 13.6911727,14.6463539 C15.0421322,13.2563326 19.1314712,9.79407249 17.7547974,7.13675906 C16.9568443,5.59675906 14.990661,5.07923241 13.5420896,6.03304904 Z"
+                        id="Path"
+                        fill="#D2D2D2"
+                      ></path>
+                      <path
+                        d="M17.6722388,6.29671642 C17.6185501,6.29671642 17.5649893,6.27552239 17.5251599,6.23351812 C17.4480171,6.15232409 17.4513859,6.02396588 17.53258,5.94673774 C19.0948827,4.46324094 19.7616631,3.18712154 19.5142857,2.15347548 C19.2142004,0.899744136 17.6302345,0.414285714 17.6142857,0.409552239 C17.506951,0.377654584 17.4458422,0.264776119 17.4778252,0.157398721 C17.5097228,0.0498507463 17.623113,-0.0109594883 17.7301493,0.0209381663 C17.8045203,0.0429424307 19.5547974,0.580469083 19.908742,2.05897655 C20.1923667,3.24358209 19.4867804,4.65061834 17.811855,6.2410661 C17.7726652,6.27829424 17.7224733,6.29671642 17.6722388,6.29671642 Z"
+                        id="Path"
+                        fill="#929191"
+                      ></path>
+                      <path
+                        d="M17.0478891,5.57769723 L15.3410661,5.56357696 C15.2084861,5.56247335 15.1654584,5.74127932 15.2840085,5.80063966 L16.2706183,5.98767591 L16.4898934,6.87360341 L17.5336887,7.12797441 L17.8426866,8.27991471 C17.9032409,8.37944563 18.054968,8.34950959 18.073177,8.23445629 L18.2662687,7.01646055 C18.3384222,6.56123667 18.1530064,6.10341151 17.7843923,5.82673774 L17.7843923,5.82673774 C17.571855,5.66716418 17.3137313,5.57987207 17.0478891,5.57769723 Z"
+                        id="Path"
+                        fill="#A6A6A6"
+                      ></path>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+              <div class="button-right-box">
+                <button class="cart-button">ADD</button>
+                <div class="bottom-right-content">Customizable</div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="foodmsg">
+            Lip-smacking flavours at jaw-dropping savings upto Rs. 320. Choose
+            any 4 of your favourites from our Classic Non-Veg wraps with
+            extraordinary flavors!
+          </div>
+          <div class="tags">
+            <div><p class="tagheading">Tags</p></div>
+            <div class="tagcategory">
+              <span class="spantext">Non Veg</span>
+              <span class="spantext">Snack</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--footerstarte  -->
+    <div class="footerbox">
+      <div class="contentbox">
+        <div class="apnacontent">
+          <br />
+          <div class="citiesbox">
+            <p class="heading">Cities we deliver to</p>
+            <div class="city1"><p>Pune</p></div>
+            <div class="city2"><p>Mumbai</p></div>
+            <div class="city3"><p>Bangalore</p></div>
+
+            <div class="city4"><p>Noida</p></div>
+            <div class="city5"><p>Gurgaon</p></div>
+            <div class="city6"><p>New Delhi</p></div>
+            <div class="city7"><p>Hyderabad</p></div>
+            <div class="city8"><p>Chennai</p></div>
+            <div class="city9"><p>Indore</p></div>
+            <div class="city10"><p>Nagpur</p></div>
+            <div class="city11"><p>Faridabad</p></div>
+            <div class="city12"><p>Ahmedabad</p></div>
+            <div class="city13"><p>Ghaziabad</p></div>
+            <div class="city14"><p>Coimbatore</p></div>
+            <div class="city15"><p>Dubai</p></div>
+            <div class="city16"><p>Vadodra</p></div>
+            <div class="city17"><p>Bhopal</p></div>
+            <div class="city18"><p>Kolkata</p></div>
+            <div class="city19"><p>Surat</p></div>
+            <div class="city20"><p>Mysore</p></div>
+            <div class="city21"><p>Pondicherry</p></div>
+            <div class="city22"><p>Nashik</p></div>
+            <div class="city23"><p>Jaipur</p></div>
+            <div class="city24"><p>Panchukla</p></div>
+            <div class="city25"><p>Mohali</p></div>
+            <div class="city26"><p>Chandigarh</p></div>
+            <div class="city27"><p>Vijaywada</p></div>
+            <div class="city28"><p>Vellore</p></div>
+            <div class="city29"><p>Zirakpur</p></div>
+            <div class="city30"><p>Lucknow</p></div>
+            <div class="city31"><p>Kochi</p></div>
+            <div class="city32"><p>Vizag</p></div>
+            <div class="city33"><p>Tirupati</p></div>
+            <div class="city34"><p>Trippur</p></div>
+            <div class="city35"><p>Kota</p></div>
+            <div class="city36"><p>Many more...</p></div>
+            <div class="space"></div>
+          </div>
+          <div class="legal_contact">
+            <div class="city37">
+              <p class="heading">Legal</p>
+              <button class="btn">
+                <p>
+                  <a class="href1" href="https://www.faasos.com/terms"
+                    >Terms & Conditions</a
+                  >
+                </p></button
+              ><button class="btn">
+                <p>
+                  <a class="href1" href="https://www.faasos.com/privacy"
+                    >Privacy Policy</a
+                  >
+                </p>
+              </button>
+            </div>
+            <div class="city38">
+              <p class="heading">Contact</p>
+              <button class="btn">
+                <p>
+                  <a class="href1" href="mailto:feasts@faasos.com"
+                    ><svg
+                      class="mail"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                      ></path>
+                      <polyline points="22,6 12,13 2,6"></polyline></svg
+                    >crm@faasos.com</a
+                  >
+                </p>
+              </button>
+            </div>
+            <div class="space"></div>
+          </div>
+          <hr />
+          <div class="citiesbox1">
+            <div class="left">2020 @ Faasos. All rights reserved</div>
+            <div class="right">
+              <p>Follow us on</p>
+              <a
+                href="https://www.facebook.com/Faasos"
+                class="fa fa-facebook"
+              ></a>
+              <a href="https://twitter.com/faasos" class="fa fa-twitter"></a
+              ><a
+                href="https://www.instagram.com/faasos/"
+                class="fa fa-instagram"
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer ended -->
+    <div class="second-sticky">
+      <div class="rating-left-box">
+        <div class="rating-box">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Empty_Star.svg/768px-Empty_Star.svg.png"
+            alt="rating image"
+            width="15px"
+            height="15px"
+          />
+          <p class="ratings">5</p>
+        </div>
+        <div class="bottom-left-content">845 trust us</div>
+      </div>
+
+      <div class="button-right-box">
+        <button class="cart-button">ADD</button>
+        <div class="bottom-right-content">Customizable</div>
+      </div>
+    </div>
+  </body>
+</html>
