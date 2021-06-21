@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temp-SINGUP</title>
+    <!-- <script src="https://unpkg.com/feather-icons"></script> -->
+    <style>
+      * {
+        border-radius: 20px;
+        border: none;
+        padding: 10px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      button {
+        background-color: blueviolet;
+        color: white;
+      }
+      .formContainer {
+        width: fit-content;
+        margin: auto;
+        background-color: rgb(212, 166, 255);
+        border-radius: 20px;
+        padding: 1%;
+      }
+      input,
+      button {
+        margin: 1%;
+      }
+      .formFooter {
+        font-size: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="formContainer">
+      <h2><i data-feather="chevron-left"></i>Sign Up</h2>
+      <p class="formHeader">Create an account with new phone number</p>
+      <form class="signupForm">
+        <input
+          type="number"
+          name="phoneNumber"
+          placeholder="Phone Number"
+        /><br />
+        <input type="text" name="name" placeholder="Name" /><br />
+        <input type="email" name="email" placeholder="Email Address" /><br />
+        <button onclick="createAC()" id="btn">CREATE ACCOUNT</button>
+      </form>
+      <p class="formFooter">
+        By creating an account, i accept the
+        <a href="terms.html">Terms & Conditions</a>
+      </p>
+    </div>
+    <!-- <script>
+        feather.replace()
+    </script> -->
+  </body>
+
+  <script>
+    document.querySelector("#btn").addEventListener("click", function (event) {
+      event.preventDefault();
+    });
+
+    function createAC() {
+      let suForm = document.getElementsByClassName("signupForm")[0];
+
+      let phone = suForm.phoneNumber.value;
+      let name = suForm.name.value;
+      let email = suForm.email.value;
+
+      let profile = {
+        phone,
+        name,
+        email,
+      };
+
+      let users;
+
+      users = localStorage.getItem("users");
+
+      if (users == null) {
+        users = [];
+      } else {
+        users = JSON.parse(localStorage.getItem("users"));
+      }
+
+      users.push(profile);
+
+      localStorage.setItem("users", JSON.stringify(users));
+      alert("Registered Succesfully");
+      //   window.location.href = "login.html";
+    }
+  </script>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+      * {
+        /* border-radius: 20px; */
+
+        padding: 10px;
+
+        font-family: "Poppins", sans-serif;
+      }
+      .headtext {
+        font-size: 25px;
+        padding: 0;
+        margin: 0;
+        font-weight: 600;
+      }
+
+      .formContainer {
+        width: 400px;
+        margin: auto;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        font-size: 20px;
+        padding: 1%;
+      }
+      input,
+      #btnn {
+        width: 80%;
+        margin: auto;
+        height: 30px;
+        font-size: 20px;
+        border-bottom-width: 1px;
+        margin: 5% 1%;
+      }
+      #btnn {
+        width: 85%;
+        height: 60px;
+        font-size: 16px;
+        font-weight: 600;
+        background-color: rgb(243, 214, 83);
+        color: black;
+      }
+      .formHeader {
+        margin: 0 0 0 20px;
+        max-width: 360px;
+        padding: 0;
+        font-size: 16px;
+      }
+      .formFooter {
+        font-size: 80%;
+      }
+
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+      }
+
+      /* Modal Content (image) */
+      .modal-content {
+        margin: auto;
+        display: block;
+      }
+
+      /* Caption of Modal Image */
+      #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+      }
+
+      /* Add Animation */
+      .modal-content,
+      #caption {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+      }
+
+      @-webkit-keyframes zoom {
+        from {
+          -webkit-transform: scale(0);
+        }
+        to {
+          -webkit-transform: scale(1);
+        }
+      }
+
+      @keyframes zoom {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      /* The Close Button */
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="myImg">OPEN</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+
+      <div class="formContainer modal-content">
+        <p class="headtext"><i data-feather="chevron-left"></i>Log in</p>
+        <p class="formHeader">Create an account with new phone number</p>
+        <form class="signupForm">
+          <input
+            type="number"
+            name="phoneNumber"
+            placeholder="Phone Number"
+          /><br />
+          <input type="text" name="name" placeholder="Name" /><br />
+          <input type="email" name="email" placeholder="Email Address" /><br />
+          <button onclick="createAC()" id="btnn">CREATE ACCOUNT</button>
+        </form>
+        <p class="formFooter">
+          By creating an account, i accept the
+          <a href="terms.html">Terms & Conditions</a>
+        </p>
+      </div>
+      <div id="caption"></div>
+    </div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById("myImg");
+
+      var captionText = document.getElementById("caption");
+      img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      };
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+      //    hamanth code below
+      document
+        .querySelector("#btn")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+        });
+
+      function createAC() {
+        let suForm = document.getElementsByClassName("signupForm")[0];
+
+        let phone = suForm.phoneNumber.value;
+        let name = suForm.name.value;
+        let email = suForm.email.value;
+
+        let profile = {
+          phone,
+          name,
+          email,
+        };
+
+        let users;
+
+        users = localStorage.getItem("users");
+
+        if (users == null) {
+          users = [];
+        } else {
+          users = JSON.parse(localStorage.getItem("users"));
+        }
+
+        users.push(profile);
+
+        localStorage.setItem("users", JSON.stringify(users));
+        alert("Registered Succesfully");
+        //   window.location.href = "login.html";
+      }
+    </script>
+  </body>
+</html>
